@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -17,11 +17,14 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <!-- User using jQuery and Ajex -->
     <script src="/user.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
+<div th:replace="~{fragments/navbar :: navbar}" />
 
 <body class="bg-light">
 
-    <div class="container mt-5">
+    <div id="userDiv" class="container mt-5">
         <h2 class="mb-4">User Management</h2>
         <div class="row">
             <!-- Left Column: Form to Add/Update User -->
@@ -54,6 +57,10 @@
                         User List
                     </div>
                     <div class="card-body">
+                        <!-- Search input -->
+                        <div class="mb-3">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Search users...">
+                        </div>
                         <table class="table table-striped table-bordered">
                             <thead class="table-dark">
                                 <tr>
@@ -73,5 +80,6 @@
         </div>
     </div>
 </body>
+<div th:replace="~{fragments/footer :: footer}" />
 
 </html>

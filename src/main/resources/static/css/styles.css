@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#userDiv {
+    flex: 1;
+    padding: 20px;
+    margin-top: 56px;
+    /* Adjust this margin based on navbar height */
+    margin-bottom: 56px;
+    /* Adjust this margin based on footer height */
+    overflow-y: auto;
+}
