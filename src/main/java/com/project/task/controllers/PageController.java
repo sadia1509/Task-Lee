@@ -12,4 +12,9 @@ public class PageController {
     public String users(){
         return "users";
     }
+
+    @GetMapping("/registration")
+    public String registration(){
+        return "registration";
+    }
 }
