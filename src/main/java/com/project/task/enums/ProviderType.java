@@ -1,5 +1,5 @@
 package com.project.task.enums;
 
-public enum Providers {
+public enum ProviderType {
     SELF, GOOGLE
 }

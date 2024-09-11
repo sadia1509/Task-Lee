@@ -1,7 +1,8 @@
 package com.project.task.models;
 
-import com.project.task.enums.Providers;
+import com.project.task.enums.ProviderType;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,12 +30,17 @@ public class User {
     private String phoneNumber;
 
     // additional information about the user
+    @Builder.Default
     private boolean enabled = false;
+    @Builder.Default
     private boolean emailVerified = false;
+    @Builder.Default
     private boolean phoneNumberVerified = false;
 
     // sign up provider type
-    private Providers provider = Providers.SELF;
+    @Builder.Default
+    @Enumerated(value = EnumType.STRING)
+    private ProviderType provider = ProviderType.SELF;
     private String providerUserId;
 
     // add contacts
