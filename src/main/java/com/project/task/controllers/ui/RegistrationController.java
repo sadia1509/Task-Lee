@@ -1,4 +1,4 @@
-package com.project.task.controllers;
+package com.project.task.controllers.ui;
 
 import com.project.task.enums.MessageType;
 import com.project.task.forms.RegistrationForm;
@@ -18,14 +18,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequestMapping("/web")
-public class PageController {
+public class RegistrationController {
 
     @Autowired
     private PageService pageService;
 
-    @GetMapping("/users")
-    public String users() {
-        return "users";
+    @GetMapping("/")
+    public String index() {
+        return "redirect:/web/home";
+    }
+
+    @GetMapping("/home")
+    public String home(Model model){
+        model.addAttribute("name", "Sadia Afrose");
+        return "home";
     }
 
     @GetMapping("/registration")
