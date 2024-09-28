@@ -54,7 +54,8 @@ public class User implements UserDetails {
      * fetch type lazy means it will not load from the database until they are explicitly accessed
      * orphan removal ensures that child entities that are no longer referenced by the parent entity are automatically deleted from the database.
      */
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    // TO-DO : lazy is not working, need to take a look
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Contact> contactList = new ArrayList<>();
 
     @Override
