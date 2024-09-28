@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#mainDiv {
+    flex: 1;
+    padding: 50px;
+    margin-top: 56px;
+    /* Adjust this margin based on navbar height */
+    margin-bottom: 56px;
+    /* Adjust this margin based on footer height */
+    overflow-y: auto;
+    display: grid;  /* Use grid layout */
+    place-items: center;  /* Centers the content both horizontally and vertically */
+}
+
+.card {
+    width: 100%;
+    max-width: 500px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
