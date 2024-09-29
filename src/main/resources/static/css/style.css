@@ -19,7 +19,7 @@ body {
     place-items: center;  /* Centers the content both horizontally and vertically */
 }
 
-.card {
+#card {
     width: 100%;
     max-width: 500px;
     border: none;
@@ -27,10 +27,20 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.card-header {
+#card-header {
     background-color: #007bff;
     color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
+}
+
+#userDiv {
+    flex: 1;
+    padding: 20px;
+    margin-top: 56px;
+    /* Adjust this margin based on navbar height */
+    margin-bottom: 56px;
+    /* Adjust this margin based on footer height */
+    overflow-y: auto;
 }

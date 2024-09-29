@@ -35,7 +35,7 @@ public class SecurityConfig {
         httpSecurity.csrf(AbstractHttpConfigurer::disable);
         // controlling urls (assess / authorization)
         httpSecurity.authorizeHttpRequests(authorized -> {
-            authorized.requestMatchers("/web/users/**").authenticated();
+            authorized.requestMatchers("/web/profiles/**").authenticated();
             authorized.anyRequest().permitAll();
         });
         // default login form
@@ -45,18 +45,18 @@ public class SecurityConfig {
             formLogin.loginPage("/web/login")
                     .loginProcessingUrl("/web/validateLogin")
                     .successForwardUrl("/web/home")
-                    .failureForwardUrl("/web/users")
+                    .failureForwardUrl("/web/profiles")
                     .failureUrl("/web/login?error=true")
                     .usernameParameter("email")
                     .passwordParameter("password");
         });
 
-//        httpSecurity.logout(logout -> {
-//            logout.logoutUrl("/web/logout")
-//                    .logoutSuccessUrl("/web/login?logout=true")
-//                    .invalidateHttpSession(true)
-//                    .deleteCookies("JSESSIONID");
-//        });
+        httpSecurity.logout(formLogout -> {
+            formLogout.logoutUrl("/web/logout")
+                    .logoutSuccessUrl("/web/login?logout=true")
+                    .invalidateHttpSession(true)
+                    .deleteCookies("JSESSIONID");
+        });
 
         return httpSecurity.build();
     }

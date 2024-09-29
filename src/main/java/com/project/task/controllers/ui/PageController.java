@@ -15,27 +15,34 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/web")
-public class RegistrationController {
+public class PageController {
 
     @Autowired
     private PageService pageService;
 
+    // Root redirection
     @GetMapping("/")
     public String index() {
         return "redirect:/web/home";
     }
 
+
+    // Home page
     @GetMapping("/home")
     public String home(Model model) {
         model.addAttribute("name", "Sadia Afrose");
         return "home";
     }
 
+
+    // Login page
     @GetMapping("/login")
     public String login() {
         return "login";
     }
 
+
+    // Registration page
     @GetMapping("/registration")
     public String registration(Model model) {
         RegistrationForm registrationForm = new RegistrationForm();
@@ -55,6 +62,13 @@ public class RegistrationController {
                 .build();
         httpSession.setAttribute("message", message);
         return "redirect:/web/registration";
+    }
+
+
+    // User page
+    @GetMapping("/profiles")
+    public String users() {
+        return "users";
     }
 
 }
