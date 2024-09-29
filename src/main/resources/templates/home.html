@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head(pageTitle='Home')"></head>
+
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"/>
+<!--<div align="center">-->
+<!--    <h1 data-th-text="${name}"/>-->
+<!--</div>-->
+<div id="mainDiv">
+    <h1>hi!! home!</h1>
+</div>
+<div th:replace="~{fragments/footer :: footer}"/>
+</body>
+</html>

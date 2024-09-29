@@ -1,4 +1,4 @@
-package com.project.task.controllers;
+package com.project.task.controllers.api;
 
 import com.project.task.models.User;
 import com.project.task.services.UserService;
